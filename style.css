@@ -1,0 +1,133 @@
+:root {
+	--main_color: black;
+	--off_color: white;
+	--off_color_2: silver;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+body {
+	font-family: "Newsreader", serif;
+	font-weight: 400;
+	font-style: normal;
+	color: var(--off_color);
+	/*can set a background image*/
+	/*
+	background: url('sparkly-bg.gif');
+	 */
+	background-color: var(--main_color);
+	margin: 0;
+	padding: 0;
+}
+
+.my_name {
+	font-family: "UnifrakturMaguntia", cursive;
+	font-size: 160px;
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.7);
+	border: 3px solid white;
+}
+
+.content {
+	display: flex;
+}
+
+.sidebar {
+	width: 300px;
+	background-color: var(--main_color);
+	padding: 20px;
+	text-align: center;
+	border-right: 2px solid silver;
+}
+
+.profile-pic {
+	width: 100%;
+	border: 3px solid white;
+	margin-bottom: 10px;
+}
+
+.bio {
+	font-style: italic;
+	margin-bottom: 20px;
+}
+
+.links {
+	list-style: none;
+	padding: 0;
+}
+
+.links li {
+	margin: 10px 0;
+}
+
+.links a {
+	color: var(--off_color);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.main {
+	flex: 1; /*Fill the rest of the space after sidebar takes its space.*/
+	padding: 20px;
+	background-color: #111;
+}
+
+.camera_roll {
+	display: grid;
+	/*Fill row with as many columns as will fit. Each column should be 180px wide*/
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /*Adapt to screen*/
+	grid-auto-rows: 1fr;
+	grid-template-rows: repeat(2, 1fr); /* limit to 2 rows */
+	gap: 10px; /* Spacing between images */
+	max-height: none; /* remove height restriction */
+	overflow: hidden; /* hides any extra rows */
+	aspect-ratio: auto; /* let the grid layout dictate height */
+}
+
+.camera_roll img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1 / 1;  /* Ensures square shape */
+	object-fit: cover;    /* Crop images to fill the square */
+	/*border-radius: 4px;    Soft corners */
+	cursor: pointer;      /* Show clickable feel */
+}
+
+.post_preview {
+	margin-top: 20px;
+	padding: 10px;
+	background: #222;
+	border: 2px solid silver;
+}
+
+.projects {
+	margin-top: 20px;
+}
+
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+}
+
+.project {
+	text-align: center;
+	background-color: #333;
+	padding: 5px;
+	border: 1px solid silver;
+}
