@@ -30,9 +30,12 @@ body {
 
 .my_name {
 	font-family: "UnifrakturMaguntia", cursive;
-	font-size: 160px;
+	font-size: 180px;
 	font-weight: 400;
 	font-style: normal;
+
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 
@@ -40,7 +43,6 @@ body {
 	max-width: 1000px;
 	margin: 0 auto;
 	background: rgba(0, 0, 0, 0.7);
-	border: 3px solid white;
 }
 
 .content {
@@ -52,7 +54,7 @@ body {
 	background-color: var(--main_color);
 	padding: 20px;
 	text-align: center;
-	border-right: 2px solid silver;
+	background-color: #111;
 }
 
 .profile-pic {
@@ -84,7 +86,6 @@ body {
 .main {
 	flex: 1; /*Fill the rest of the space after sidebar takes its space.*/
 	padding: 20px;
-	background-color: #111;
 }
 
 .camera_roll {
