@@ -8,18 +8,21 @@ var span = document.getElementsByClassName("close")[0];
 function show_image(event)
 {
 	modal.style.display = "block";
-	thumbnail = event.currentTarget;
-	img.src = thumbnail.src;
+
+	var overlay = event.currentTarget; // The clicked overlay.
+	var thumbnail = overlay.previousElementSibling; // Image element of the overlay.
+
+	img.src = thumbnail.src; // Sets the modals image as the thumbnails src.
 	captionText.innerHTML = thumbnail.alt;
 }
 
-// get all thumbnails
-var thumbnails = document.querySelectorAll(".thumbnail");
+// get all overlays
+var overlays = document.querySelectorAll(".overlay");
 
-// Loop through each thumbnail and attach the function.
-thumbnails.forEach(function(thumbnail) 
+// Loop through each overlay and attach the function.
+overlays.forEach(function(overlay) 
 {
-	thumbnail.addEventListener("click", show_image); 
+	overlay.addEventListener("click", show_image); 
 });
 
 // When the user clicks on <span> (x), close the modal
