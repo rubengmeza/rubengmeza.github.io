@@ -13,6 +13,10 @@ header {
 	justify-content: center;
 }
 
+footer {
+	margin: 100px;
+}
+
 body {
 	font-family: "Newsreader", serif;
 	font-weight: 400;
@@ -63,7 +67,7 @@ body {
 
 
 .container {
-	max-width: 1200px;
+	max-width: 1440px;
 	margin: 0 auto;
 }
 
@@ -81,6 +85,10 @@ body {
 .right_sidebar {
 	width: 170px;
 	text-align: left;
+}
+
+.right_sidebar li:hover {
+	background-color: grey;
 }
 
 .profile-pic {
@@ -107,7 +115,7 @@ body {
 .links a {
 	color: var(--text_color);
 	text-decoration: none;
-	border: 1px solid white;
+	width: 200px;
 }
 
 .main {
@@ -128,7 +136,7 @@ body {
 .camera_roll {
 	display: grid;
 	/*Fill row with as many columns as will fit. Each column should be 180px wide*/
-	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /*Adapt to screen*/
+	grid-template-columns: repeat(3, minmax(180px, 1fr)); /*Adapt to screen*/
 	grid-auto-rows: 1fr;
 	grid-template-rows: repeat(3, 1fr); /* limit rows */
 	gap: 10px; /* Spacing between images */
