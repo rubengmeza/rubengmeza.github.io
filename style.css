@@ -1,6 +1,9 @@
 :root {
 	--main_color: black;
 	--text_color: white;
+	--gold: #ffb338;
+	--light-shadow: #77571d;
+	--dark-shadow: #3e2904;
 }
 
 * {
@@ -28,7 +31,7 @@ body {
 }
 
 .background_overlay {
-	background: url("images/rooftop_girl.png") no-repeat center center fixed;
+	background: url("assets/rooftop_girl.png") no-repeat center center fixed;
 
 	position: fixed;
 	top: 0;
@@ -148,7 +151,7 @@ body {
 .camera_roll img {
 	display: block;
 	width: 100%;
-	aspect-ratio: 1 / 1;  /* Ensures square shape */
+	aspect-ratio: 4 / 5;  /* Ensures square shape */
 	object-fit: cover;    /* Crop images to fill the square */
 	/*border-radius: 4px;    Soft corners */
 }
@@ -209,6 +212,11 @@ body {
   padding: 20px;
   border: 1px solid #111;
   max-width: 40%; /* Could be more or less, depending on screen size */
+}
+
+.modal_content img {
+	height: 100%;
+	aspect-ratio: 1.9/1;
 }
 
 /* The Close Button */
