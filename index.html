@@ -6,7 +6,7 @@
   <title>burrito bandito</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <style>
     /* Optional: Inline background music */
@@ -16,9 +16,6 @@
   </style>
 </head>
 
-<header>
-	<div class = "container my_name">ruben</div>
-</header>
 
 <body>
   <!-- Playing favorite songs would be cool!!!!
@@ -26,6 +23,13 @@
 	  <source src="my_mix.mp3" type="audio/mpeg">
 	  </audio>
   -->
+  <header>
+	  <div class="title_wrapper">
+		  <div class="subtitle">the internet is boring</div>
+		  <div class="main_title" title="ruben">ruben</div>
+	  </div>
+  </header>
+
   <div class = "background_overlay"></div>
   <video class = "video_overlay_2"i autoplay loop muted playsinline>
 	  <source src = "assets/rain.mp4" type = "video/mp4">
@@ -40,12 +44,11 @@
 		  <h2 style = "font-family: UnifrakturMaguntia, cursive;">burrito bandito</h2>
 
 		  <p class="bio">Computer toucher, slayer of burritos, and keeper of socks.</p>
-
+		  <p>rubengmeza@proton.me</p>
 		  <ul class="links">
 			  <li><a href="#">github</a></li>
 		  </ul>
 
-		  <p>rubengmeza@proton.me</p>
 
 	  </div>
 
@@ -78,55 +81,55 @@
 
 		  <div class = "camera_roll">
 			  <div class = "post">
-				  <img class = "thumbnail" src = "posts/images/dark.jpg" loading = "lazy">
+				  <img class = "thumbnail" src = "posts/images/dark.jpg" alt = "dark.jpg" loading = "lazy">
 				  <div class = "overlay">
 					  <div class = "button">view image</div>
 				  </div>
 			  </div>
 			  <div class = "post">
-				  <img class = "thumbnail" src = "posts/images/cool_cats.jpg" loading = "lazy">
+				  <img class = "thumbnail" src = "posts/images/cool_cats.jpg" alt = "cool_cats.jpg" loading = "lazy">
 				  <div class = "overlay">
 					  <div class = "button">view image</div>
 				  </div>
 			  </div>
 			  <div class = "post">
-				  <img class = "thumbnail" src = "posts/images/bad_day.jpg" loading = "lazy">
+				  <img class = "thumbnail" src = "posts/images/bad_day.jpg" alt = "bad_day.jpg" loading = "lazy">
 				  <div class = "overlay">
 					  <div class = "button">view image</div>
 				  </div>
 			  </div>
 			  <div class = "post">
-				  <img class = "thumbnail" src = "posts/images/bright.jpg" loading = "lazy">
+				  <img class = "thumbnail" src = "posts/images/bright.jpg" alt = "bright.jpg" loading = "lazy">
 				  <div class = "overlay">
 					  <div class = "button">view image</div>
 				  </div>
 			  </div>
 			  <div class = "post">
-				  <img class = "thumbnail" src = "posts/images/gentlemen.jpg" loading = "lazy">
+				  <img class = "thumbnail" src = "posts/images/gentlemen.jpg" alt = "gentlemen.jpg" loading = "lazy">
 				  <div class = "overlay">
 					  <div class = "button">view image</div>
 				  </div>
 			  </div>
 			  <div class = "post">
-				  <img class = "thumbnail" src = "posts/images/scene.jpg" loading = "lazy">
+				  <img class = "thumbnail" src = "posts/images/scene.jpg" alt = "scene.jpg" loading = "lazy">
 				  <div class = "overlay">
 					  <div class = "button">view image</div>
 				  </div>
 			  </div>
 			  <div class = "post">
-				  <img class = "thumbnail" src = "posts/images/mountain_men.jpg" loading = "lazy">
+				  <img class = "thumbnail" src = "posts/images/mountain_men.jpg" alt = "mountain_men.jpg" loading = "lazy">
 				  <div class = "overlay">
 					  <div class = "button">view image</div>
 				  </div>
 			  </div>
 			  <div class = "post">
-				  <img class = "thumbnail" src = "posts/images/love.jpg" loading = "lazy">
+				  <img class = "thumbnail" src = "posts/images/nice_day.jpg" alt = "nice_day.jpg" loading = "lazy">
 				  <div class = "overlay">
 					  <div class = "button">view image</div>
 				  </div>
 			  </div>
 			  <div class = "post">
-				  <img class = "thumbnail" src = "posts/images/mrs.jpg" loading = "lazy">
+				  <img class = "thumbnail" src = "posts/images/mrs.jpg" alt = "mrs.jpg" loading = "lazy">
 				  <div class = "overlay">
 					  <div class = "button">view image</div>
 				  </div>
@@ -135,6 +138,7 @@
 			  <div id="img_modal" class="modal">
 				  <div class="modal_content">
 					  <span class="close">&times;</span>
+					  <div id = "caption" style = "text-align: center;"></div>
 					  <img class = "model_content" id = "img">
 				  </div>
 			  </div>

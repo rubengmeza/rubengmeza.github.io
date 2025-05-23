@@ -11,9 +11,90 @@
 }
 
 header {
+	margin: 100px;
 	display: flex;
-	align-items: center;
 	justify-content: center;
+}
+
+.title_wrapper {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+.subtitle {
+  font-family: 'Newsreader', sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  position: relative;
+  top: 10px; /* adjusts how close it "sticks" */
+  left: 0;
+  white-space: nowrap;
+  pointer-events: none;
+
+
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #00ffea, #ff00f2);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 2px #0ff,
+    0 0 5px #0ff,
+    0 0 10px #f0f,
+    0 0 20px #f0f;
+  animation: flicker 2s infinite;
+
+}
+
+.main_title {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 190px;
+  position: relative;
+  color: white;
+  text-shadow: 0 0 2px black, 0 0 10px black;
+}
+
+.subtitle::before,
+.subtitle::after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  color: #f0f;
+  background: transparent;
+  z-index: -1;
+}
+
+.subtitle::before {
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+  animation: glitchTop 2s infinite linear;
+}
+
+.subtitle::after {
+  clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+  animation: glitchBottom 3s infinite linear;
+}
+
+/* Glitch animations */
+@keyframes glitchTop {
+  0%, 100% { transform: translate(0); }
+  50% { transform: translate(-3px, -2px); }
+}
+
+@keyframes glitchBottom {
+  0%, 100% { transform: translate(0); }
+  50% { transform: translate(3px, 2px); }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.8;
+  }
 }
 
 footer {
@@ -21,6 +102,8 @@ footer {
 }
 
 body {
+	display: flex;
+	flex-direction: column;
 	font-family: "Newsreader", serif;
 	font-weight: 400;
 	font-style: normal;
@@ -56,16 +139,6 @@ body {
 
 	opacity: 0.5;
 	filter: blue(2px);
-}
-
-.my_name {
-	font-family: "UnifrakturMaguntia", cursive;
-	font-size: 180px;
-	font-weight: 400;
-	font-style: normal;
-
-	padding-top: 50px;
-	padding-bottom: 50px;
 }
 
 
@@ -215,8 +288,11 @@ body {
 }
 
 .modal_content img {
-	height: 100%;
-	aspect-ratio: 1.9/1;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	display: block;
+	margin: 0 auto;
 }
 
 /* The Close Button */
