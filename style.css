@@ -1,10 +1,30 @@
 :root {
-	--main_color: black;
-	--text_color: white;
-	--gold: #ffb338;
-	--light-shadow: #77571d;
-	--dark-shadow: #3e2904;
+  --main_color: #000000;
+  --text_color: #d8dee9;
+  --border_color: #ffffff;
+
+  /* Accent Colors */
+  --accent_blue: #6fc3df;
+  --accent_blue_alt: #88c0d0;
+
+  /* Terminal-style colors */
+  --highlight_yellow: #ebcb8b;
+  --alert_red: #bf616a;
+  --muted_green: #a3be8c;
+
+  /* Backgrounds */
+  --background_dark: #2e3440;
+  --background_alt: #1e1e2e;
+  --widget_background: #2b2d3a;
+
+  /* Button and hover states */
+  --button_color: var(--widget_background);
+  --button_hover: var(--accent_blue);
+
+  /* Miscellaneous */
+  --shadow_black: rgba(0, 0, 0, 0.5);
 }
+
 
 * {
 	box-sizing: border-box;
@@ -22,30 +42,6 @@ header {
   text-align: left;
 }
 
-.subtitle {
-  font-family: 'Newsreader', sans-serif;
-  font-size: 20px;
-  font-style: italic;
-  position: relative;
-  top: 10px; /* adjusts how close it "sticks" */
-  left: 0;
-  white-space: nowrap;
-  pointer-events: none;
-
-
-  letter-spacing: 2px;
-  background: linear-gradient(90deg, #00ffea, #ff00f2);
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow:
-    0 0 2px #0ff,
-    0 0 5px #0ff,
-    0 0 10px #f0f,
-    0 0 20px #f0f;
-  animation: flicker 2s infinite;
-
-}
-
 .main_title {
   font-family: 'UnifrakturMaguntia', cursive;
   font-size: 190px;
@@ -54,48 +50,6 @@ header {
   text-shadow: 0 0 2px black, 0 0 10px black;
 }
 
-.subtitle::before,
-.subtitle::after {
-  content: attr(title);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-  color: #f0f;
-  background: transparent;
-  z-index: -1;
-}
-
-.subtitle::before {
-  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
-  animation: glitchTop 2s infinite linear;
-}
-
-.subtitle::after {
-  clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
-  animation: glitchBottom 3s infinite linear;
-}
-
-/* Glitch animations */
-@keyframes glitchTop {
-  0%, 100% { transform: translate(0); }
-  50% { transform: translate(-3px, -2px); }
-}
-
-@keyframes glitchBottom {
-  0%, 100% { transform: translate(0); }
-  50% { transform: translate(3px, 2px); }
-}
-
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-  }
-  20%, 22%, 24%, 55% {
-    opacity: 0.8;
-  }
-}
 
 footer {
 	margin: 100px;
@@ -108,13 +62,13 @@ body {
 	font-weight: 400;
 	font-style: normal;
 	color: var(--text_color);
-	background-color: black;
+	background-color: var(--main_color);
 	margin: 0;
 	padding: 0;
 }
 
 .background_overlay {
-	background: url("assets/rooftop_girl.png") no-repeat center center fixed;
+	/*background: url("assets/pythagoras.png") no-repeat center center fixed;*/
 
 	position: fixed;
 	top: 0;
@@ -164,18 +118,19 @@ body {
 }
 
 .right_sidebar li:hover {
-	background-color: grey;
+	background-color: var(--widget_background);
 }
 
 .profile-pic {
 	width: 100%;
 	border: 3px solid black;
 	margin-bottom: 10px;
-	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 2px 1px var(--shadow_black);
 }
 
 .bio {
 	font-style: italic;
+	color: var(--muted_green);
 	margin-bottom: 20px;
 }
 
@@ -189,13 +144,13 @@ body {
 }
 
 .links a {
-	color: var(--text_color);
+	color: var(--highlight_yellow);
 	text-decoration: none;
 	width: 200px;
 }
 
 .main {
-	border: 1px solid white;
+	border: 1px solid var(--border_color);
 	flex: 1; /*Fill the rest of the space after sidebar takes its space.*/
 	padding: 20px;
 }
@@ -244,7 +199,7 @@ body {
 }
 
 .button {
-  background-color: darkgrey;
+  background-color: var(--button_color);
   color: white;
   font-size: 16px;
   text-align: center;
@@ -253,7 +208,7 @@ body {
 }
 
 .button:hover {
-	background-color: grey;
+	background-color: var(--button_hover);
 }
 
 .post:hover .overlay {
@@ -280,10 +235,10 @@ body {
 
 /* Modal Content/Box */
 .modal_content {
-  background-color: #111;
+  background-color: var(--background_dark);
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #111;
+  border: 1px solid var(--border_color);
   max-width: 40%; /* Could be more or less, depending on screen size */
 }
 
